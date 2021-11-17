@@ -10,6 +10,10 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 4006
 
+app.use('/server/index.js', express.static(path.join('__dirname, ../server/index.js')))
+
+app.use('/img', express.static(path.join(__dirname, '../img')))
+
 app.listen(port, () => {
     console.log(`The app is ready on port ${port}`);
 });
