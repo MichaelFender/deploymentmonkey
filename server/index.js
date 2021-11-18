@@ -12,7 +12,9 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 })
 
+
 app.get("/", (req, res) => {
+    rollbar.info('SUCKIT')
     res.sendFile(path.join(__dirname, '../home.html'));
 })
 
