@@ -5,14 +5,12 @@ const path = require("path");
 const app = express();
 
 //ROLLBAR
-var _rollbarConfig = {
-    accessToken: "aa3f7cbf940c4faeba1f278c91ca2f58",
-    captureUncaught: true,
-    captureUnhandledRejections: true,
-    payload: {
-        environment: "production"
-    }
-};
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'aa3f7cbf940c4faeba1f278c91ca2f58',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
 
 
 app.get("/", (req, res) => {
