@@ -4,6 +4,14 @@ const path = require("path");
 
 const app = express();
 
+//ROLLBAR
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'f23096c0d242479291f115423e58de4d',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../home.html'));
 })
